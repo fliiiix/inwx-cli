@@ -1,0 +1,3 @@
+[submodule "inwx-rs"]
+	path = inwx-rs
+	url = https://gitlab.com/l33tname/inwx-rs.git

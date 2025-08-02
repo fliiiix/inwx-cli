@@ -1,0 +1,11 @@
+[package]
+name = "inwx-cli"
+version = "0.1.0"
+edition = "2024"
+authors = ["Fliiiix <hi@l33t.name>"]
+description = "Cli to create and delete TXT records on INWX, useful for the ACME DNS-01 challenge"
+repository = "https://github.com/fliiiix/inwx-cli"
+
+[dependencies]
+clap = { version = "4.5.42", features = ["derive"] }
+inwx = { path = "./inwx-rs" }
