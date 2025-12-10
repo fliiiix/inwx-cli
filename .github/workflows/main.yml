@@ -1,0 +1,40 @@
+name: CI
+
+on: [push]
+
+jobs:
+  freebsd-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Build FreeBSD
+        uses: cross-platform-actions/action@v0.30.0
+        with:
+          operating_system: freebsd
+          version: '14.3'
+          run: |
+            sudo pkg install -y rust
+            cargo build --profile release
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: inwx-cli-freebsd
+          path: target/release/inwx-cli
+
+  linux-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Build binaries in "release" mode
+        run: cargo build --profile release
+
+      - uses: actions/upload-artifact@v5
+        with:
+          name: inwx-cli-linux
+          path: target/release/inwx-cli

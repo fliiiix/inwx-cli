@@ -82,7 +82,7 @@ fn delete_txt_record(debug: bool, name: &str, pass: &str, id: &str) -> u8 {
         println!("Login successful");
     }
 
-    let resp = inwx.nameserver.delete_record(id.parse::<i32>().unwrap());
+    let resp = inwx.nameserver.delete_record(id);
 
     match resp {
         Ok(_) => {
