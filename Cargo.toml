@@ -7,5 +7,5 @@ description = "Cli to create and delete TXT records on INWX, useful for the ACME
 repository = "https://github.com/fliiiix/inwx-cli"
 
 [dependencies]
-clap = { version = "4.5.42", features = ["derive"] }
+clap = { version = "4.5.60", features = ["derive"] }
 inwx = { path = "./inwx-rs" }
